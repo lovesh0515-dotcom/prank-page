@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoffeePay ☕</title>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Pretendard,Arial,sans-serif;
+}
+
+body{
+
+    background:linear-gradient(180deg,#ffe066,#ffd43b);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+}
+
+.card{
+
+    width:360px;
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+    text-align:center;
+
+}
+
+.logo{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+    background:#ffec99;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:auto;
+    font-size:42px;
+
+}
+
+h1{
+
+    margin-top:20px;
+    font-size:32px;
+
+}
+
+.money{
+
+    margin-top:25px;
+
+    font-size:42px;
+    font-weight:bold;
+
+    color:#222;
+
+}
+
+.desc{
+
+    margin-top:15px;
+    color:#666;
+    font-size:18px;
+
+}
+
+button{
+
+    width:100%;
+
+    margin-top:35px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#222;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:scale(1.03);
+
+}
+
+#result{
+
+    display:none;
+
+}
+
+.big{
+
+    font-size:52px;
+    margin-top:10px;
+
+}
+
+.small{
+
+    margin-top:18px;
+
+    font-size:23px;
+
+    line-height:1.6;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card" id="start">
+
+<div class="logo">
+☕
+</div>
+
+<h1>CoffeePay</h1>
+
+<div class="money">
+₩1,000,000
+</div>
+
+<div class="desc">
+
+🎁 커피 포인트가 도착했습니다.
+
+</div>
+
+<button onclick="openGift()">
+
+선물 열기
+
+</button>
+
+</div>
+
+<div class="card" id="result">
+
+<div class="big">
+😂
+</div>
+
+<h1>
+
+속았지?
+
+</h1>
+
+<div class="small">
+
+🎉 만우절 장난 성공!<br><br>
+
+☕ 커피는 한 잔은 네가 사라!
+
+</div>
+
+<button onclick="location.reload()">
+
+다시 보기
+
+</button>
+
+</div>
+
+<script>
+
+function openGift(){
+
+document.getElementById("start").style.display="none";
+
+document.getElementById("result").style.display="block";
+
+confetti({
+particleCount:250,
+spread:180,
+origin:{y:0.6}
+});
+
+setTimeout(()=>{
+
+confetti({
+particleCount:200,
+angle:60,
+origin:{x:0}
+});
+
+confetti({
+particleCount:200,
+angle:120,
+origin:{x:1}
+});
+
+},300);
+
+}
+
+</script>
+
+</body>
+</html>
